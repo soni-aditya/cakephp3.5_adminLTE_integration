@@ -15,6 +15,7 @@
 namespace App\Controller;
 
 use Cake\Controller\Controller;
+use Cake\Core\Configure;
 use Cake\Event\Event;
 
 /**
@@ -68,5 +69,7 @@ class AppController extends Controller
         ) {
             $this->set('_serialize', true);
         }
+        $this->viewBuilder()->setTheme('AdminLTE');
+        $this->set('theme', Configure::read('Theme'));
     }
 }
